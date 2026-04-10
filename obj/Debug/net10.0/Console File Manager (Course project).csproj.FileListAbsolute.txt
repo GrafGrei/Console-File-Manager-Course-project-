@@ -1,0 +1,16 @@
+/home/graf/Projects/Console File Manager (Course project) /bin/Debug/net10.0/Console File Manager (Course project)
+/home/graf/Projects/Console File Manager (Course project) /bin/Debug/net10.0/Console File Manager (Course project).deps.json
+/home/graf/Projects/Console File Manager (Course project) /bin/Debug/net10.0/Console File Manager (Course project).runtimeconfig.json
+/home/graf/Projects/Console File Manager (Course project) /bin/Debug/net10.0/Console File Manager (Course project).dll
+/home/graf/Projects/Console File Manager (Course project) /bin/Debug/net10.0/Console File Manager (Course project).pdb
+/home/graf/Projects/Console File Manager (Course project) /obj/Debug/net10.0/Console File Manager (Course project).GeneratedMSBuildEditorConfig.editorconfig
+/home/graf/Projects/Console File Manager (Course project) /obj/Debug/net10.0/Console File Manager (Course project).AssemblyInfoInputs.cache
+/home/graf/Projects/Console File Manager (Course project) /obj/Debug/net10.0/Console File Manager (Course project).AssemblyInfo.cs
+/home/graf/Projects/Console File Manager (Course project) /obj/Debug/net10.0/Console File Manager (Course project).csproj.CoreCompileInputs.cache
+/home/graf/Projects/Console File Manager (Course project) /obj/Debug/net10.0/Console File Manager (Course project).dll
+/home/graf/Projects/Console File Manager (Course project) /obj/Debug/net10.0/refint/Console File Manager (Course project).dll
+/home/graf/Projects/Console File Manager (Course project) /obj/Debug/net10.0/Console File Manager (Course project).pdb
+/home/graf/Projects/Console File Manager (Course project) /obj/Debug/net10.0/Console File Manager (Course project).genruntimeconfig.cache
+/home/graf/Projects/Console File Manager (Course project) /obj/Debug/net10.0/ref/Console File Manager (Course project).dll
+/home/graf/Projects/Console File Manager (Course project) /obj/Debug/net10.0/Console File Manager (Course project).csproj.AssemblyReference.cache
+/home/graf/Projects/Console File Manager (Course project) /obj/Debug/net10.0/Console .8FE994B9.Up2Date
