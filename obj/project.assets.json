@@ -2,188 +2,84 @@
   "version": 3,
   "targets": {
     "net10.0": {
-      "NStack.Core/1.0.7": {
-        "type": "package",
-        "compile": {
-          "lib/netstandard2.0/NStack.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/NStack.dll": {}
-        }
-      },
-      "System.CodeDom/7.0.0": {
-        "type": "package",
-        "compile": {
-          "lib/net7.0/System.CodeDom.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net7.0/System.CodeDom.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net6.0/_._": {}
-        }
-      },
-      "System.Management/7.0.2": {
+      "Spectre.Console/0.55.0": {
         "type": "package",
         "dependencies": {
-          "System.CodeDom": "7.0.0"
+          "Spectre.Console.Ansi": "0.55.0"
         },
         "compile": {
-          "lib/net7.0/System.Management.dll": {
+          "lib/net10.0/Spectre.Console.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/net7.0/System.Management.dll": {
+          "lib/net10.0/Spectre.Console.dll": {
             "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net6.0/_._": {}
-        },
-        "runtimeTargets": {
-          "runtimes/win/lib/net7.0/System.Management.dll": {
-            "assetType": "runtime",
-            "rid": "win"
           }
         }
       },
-      "Terminal.Gui/1.14.0": {
+      "Spectre.Console.Ansi/0.55.0": {
         "type": "package",
-        "dependencies": {
-          "NStack.Core": "1.0.7",
-          "System.Management": "7.0.2"
-        },
         "compile": {
-          "lib/net7.0/Terminal.Gui.dll": {
+          "lib/net10.0/Spectre.Console.Ansi.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/net7.0/Terminal.Gui.dll": {
+          "lib/net10.0/Spectre.Console.Ansi.dll": {
             "related": ".xml"
-          }
-        },
-        "resource": {
-          "lib/net7.0/fr-FR/Terminal.Gui.resources.dll": {
-            "locale": "fr-FR"
-          },
-          "lib/net7.0/ja-JP/Terminal.Gui.resources.dll": {
-            "locale": "ja-JP"
-          },
-          "lib/net7.0/pt-PT/Terminal.Gui.resources.dll": {
-            "locale": "pt-PT"
           }
         }
       }
     }
   },
   "libraries": {
-    "NStack.Core/1.0.7": {
-      "sha512": "eqvSscta9zPXMOLRDdYf/6FloygLC9ejZlGoLiejn9XZHxVuGYnSoPzb5YBrgyMih/0yfVejreRmJTUQ64sYew==",
+    "Spectre.Console/0.55.0": {
+      "sha512": "2TVhUHFsDux0Z+y2Hv4bFsOMuON4SuotEEKkMparFkp5Rm259naaaEQrN4Sv6C1cbsiGKPjfkJDGgUp+hZPjTw==",
       "type": "package",
-      "path": "nstack.core/1.0.7",
+      "path": "spectre.console/0.55.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "README.md",
-        "lib/netstandard2.0/NStack.dll",
-        "logo48.png",
-        "nstack.core.1.0.7.nupkg.sha512",
-        "nstack.core.nuspec"
-      ]
-    },
-    "System.CodeDom/7.0.0": {
-      "sha512": "GLltyqEsE5/3IE+zYRP5sNa1l44qKl9v+bfdMcwg+M9qnQf47wK3H0SUR/T+3N4JEQXF3vV4CSuuo0rsg+nq2A==",
-      "type": "package",
-      "path": "system.codedom/7.0.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "Icon.png",
-        "LICENSE.TXT",
-        "THIRD-PARTY-NOTICES.TXT",
-        "buildTransitive/net461/System.CodeDom.targets",
-        "buildTransitive/net462/_._",
-        "buildTransitive/net6.0/_._",
-        "buildTransitive/netcoreapp2.0/System.CodeDom.targets",
-        "lib/net462/System.CodeDom.dll",
-        "lib/net462/System.CodeDom.xml",
-        "lib/net6.0/System.CodeDom.dll",
-        "lib/net6.0/System.CodeDom.xml",
-        "lib/net7.0/System.CodeDom.dll",
-        "lib/net7.0/System.CodeDom.xml",
-        "lib/netstandard2.0/System.CodeDom.dll",
-        "lib/netstandard2.0/System.CodeDom.xml",
-        "system.codedom.7.0.0.nupkg.sha512",
-        "system.codedom.nuspec",
-        "useSharedDesignerContext.txt"
-      ]
-    },
-    "System.Management/7.0.2": {
-      "sha512": "/qEUN91mP/MUQmJnM5y5BdT7ZoPuVrtxnFlbJ8a3kBJGhe2wCzBfnPFtK2wTtEEcf3DMGR9J00GZZfg6HRI6yA==",
-      "type": "package",
-      "path": "system.management/7.0.2",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "Icon.png",
-        "LICENSE.TXT",
-        "THIRD-PARTY-NOTICES.TXT",
-        "buildTransitive/net6.0/_._",
-        "buildTransitive/netcoreapp2.0/System.Management.targets",
-        "lib/net462/_._",
-        "lib/net6.0/System.Management.dll",
-        "lib/net6.0/System.Management.xml",
-        "lib/net7.0/System.Management.dll",
-        "lib/net7.0/System.Management.xml",
-        "lib/netstandard2.0/System.Management.dll",
-        "lib/netstandard2.0/System.Management.xml",
-        "runtimes/win/lib/net6.0/System.Management.dll",
-        "runtimes/win/lib/net6.0/System.Management.xml",
-        "runtimes/win/lib/net7.0/System.Management.dll",
-        "runtimes/win/lib/net7.0/System.Management.xml",
-        "system.management.7.0.2.nupkg.sha512",
-        "system.management.nuspec",
-        "useSharedDesignerContext.txt"
-      ]
-    },
-    "Terminal.Gui/1.14.0": {
-      "sha512": "l5bxyIrV+b4rEPI3onueOQxfHY6cTSgzxs3QvNo0XxZ+MqdhOd2oyIAm+rVQjsDwq/+flKtJTcq0l4KTWlHyoQ==",
-      "type": "package",
-      "path": "terminal.gui/1.14.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "README.md",
-        "lib/net472/Terminal.Gui.dll",
-        "lib/net472/Terminal.Gui.xml",
-        "lib/net472/fr-FR/Terminal.Gui.resources.dll",
-        "lib/net472/ja-JP/Terminal.Gui.resources.dll",
-        "lib/net472/pt-PT/Terminal.Gui.resources.dll",
-        "lib/net7.0/Terminal.Gui.dll",
-        "lib/net7.0/Terminal.Gui.xml",
-        "lib/net7.0/fr-FR/Terminal.Gui.resources.dll",
-        "lib/net7.0/ja-JP/Terminal.Gui.resources.dll",
-        "lib/net7.0/pt-PT/Terminal.Gui.resources.dll",
-        "lib/netstandard2.1/Terminal.Gui.dll",
-        "lib/netstandard2.1/Terminal.Gui.xml",
-        "lib/netstandard2.1/fr-FR/Terminal.Gui.resources.dll",
-        "lib/netstandard2.1/ja-JP/Terminal.Gui.resources.dll",
-        "lib/netstandard2.1/pt-PT/Terminal.Gui.resources.dll",
+        "lib/net10.0/Spectre.Console.dll",
+        "lib/net10.0/Spectre.Console.xml",
+        "lib/net8.0/Spectre.Console.dll",
+        "lib/net8.0/Spectre.Console.xml",
+        "lib/net9.0/Spectre.Console.dll",
+        "lib/net9.0/Spectre.Console.xml",
+        "lib/netstandard2.0/Spectre.Console.dll",
+        "lib/netstandard2.0/Spectre.Console.xml",
         "logo.png",
-        "terminal.gui.1.14.0.nupkg.sha512",
-        "terminal.gui.nuspec"
+        "spectre.console.0.55.0.nupkg.sha512",
+        "spectre.console.nuspec"
+      ]
+    },
+    "Spectre.Console.Ansi/0.55.0": {
+      "sha512": "GIfgOvuF8MpU52bprhwtDEtx0gmVIGOepM8bw0lH/TSMD0rg1Xp+5Y53kPG8rFVdcpbNANlhDQ5mEVVPO3/2Tg==",
+      "type": "package",
+      "path": "spectre.console.ansi/0.55.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "lib/net10.0/Spectre.Console.Ansi.dll",
+        "lib/net10.0/Spectre.Console.Ansi.xml",
+        "lib/net8.0/Spectre.Console.Ansi.dll",
+        "lib/net8.0/Spectre.Console.Ansi.xml",
+        "lib/net9.0/Spectre.Console.Ansi.dll",
+        "lib/net9.0/Spectre.Console.Ansi.xml",
+        "lib/netstandard2.0/Spectre.Console.Ansi.dll",
+        "lib/netstandard2.0/Spectre.Console.Ansi.xml",
+        "logo.png",
+        "spectre.console.ansi.0.55.0.nupkg.sha512",
+        "spectre.console.ansi.nuspec"
       ]
     }
   },
   "projectFileDependencyGroups": {
     "net10.0": [
-      "Terminal.Gui >= 1.14.0"
+      "Spectre.Console >= 0.55.0"
     ]
   },
   "packageFolders": {
@@ -229,9 +125,9 @@
       "net10.0": {
         "targetAlias": "net10.0",
         "dependencies": {
-          "Terminal.Gui": {
+          "Spectre.Console": {
             "target": "Package",
-            "version": "[1.14.0, )"
+            "version": "[0.55.0, )"
           }
         },
         "imports": [
