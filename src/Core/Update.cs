@@ -10,11 +10,20 @@ public static class StateManager
         switch (action)
         {
             case ActionType.Up:
-                state.SelectedIndex--;
+                if (state.SelectedIndex > 0)
+                    state.SelectedIndex--;
+
+                if (state.SelectedIndex < state.ScrollOffset)
+                    state.ScrollOffset--;
+
                 break;
 
             case ActionType.Down:
-                state.SelectedIndex++;
+                if (state.SelectedIndex < state.Files.Count - 1)
+                    state.SelectedIndex++;
+
+                if (state.SelectedIndex >= state.ScrollOffset + state.VisibleHeight)
+                    state.ScrollOffset++;
                 break;
         }
     }

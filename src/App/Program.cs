@@ -13,19 +13,26 @@ class Program
     {
         var state = new AppState();
 
+        DirectoryManager.LoadCurentDir(state);
+        state.SelectedIndex = 0;
+
         while (running)
         {
+            DirectoryManager.LoadCurentDir(state);
+
             Render.Draw(state);
+            
 
             ActionType action = InputHandler.Read();
-                if (action == ActionType.None)
-                    continue;
-    
-                if (action == ActionType.Quit)
-                {
-                    running = false;
-                    continue;
-                }       
+
+            if (action == ActionType.None)
+                continue;
+
+            if (action == ActionType.Quit)
+            {
+                running = false;
+                continue;
+            }       
                 
 
             StateManager.Update(state, action);

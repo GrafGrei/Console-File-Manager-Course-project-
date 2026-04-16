@@ -1,6 +1,7 @@
 namespace ConsoleFileManager.Render;
 
 using ConsoleFileManager.Core;
+using System.IO;
 
 public static class Render
 {    
@@ -14,8 +15,8 @@ public static class Render
         int height = Console.WindowHeight;
 
         int treeBlockWidth = width / 6;
-        int directoryBlockWidth = (width - treeBlockWidth)/2;
-        int previewBlockWidth = width - treeBlockWidth - directoryBlockWidth;
+        int previewBlockWidth = width/3;
+        int directoryBlockWidth = (width - previewBlockWidth - treeBlockWidth);
         
         string AppName = "Console File Manager";
 
@@ -41,5 +42,44 @@ public static class Render
         Elemens.DrawDownCorner(treeBlockWidth, height - 2);
         Elemens.DrawDownCorner(treeBlockWidth + directoryBlockWidth, height - 2);
 
+        
+
+        int cursor = 4;
+
+        int start = state.ScrollOffset;
+        int end = Math.Min(start + state.VisibleHeight, state.Files.Count);
+
+        for (int i = start; i < end; i++)
+        {
+            Console.SetCursorPosition(treeBlockWidth + 1, cursor++);
+
+            var (icon, color) = DirectoryManager.GetFileStyle(state.Files[i]);
+
+            string name = Path.GetFileName(state.Files[i])
+                .PadRight(directoryBlockWidth - 5);
+
+            if (i == state.SelectedIndex)
+            {
+                Console.ForegroundColor = ConsoleColor.DarkBlue;
+                Console.Write("");
+                Console.BackgroundColor = ConsoleColor.DarkBlue;
+                Console.ForegroundColor = color;
+                Console.Write(icon);
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.Write($" {name}");
+                Console.ResetColor();
+                Console.ForegroundColor = ConsoleColor.DarkBlue;
+                Console.Write("");
+                Console.ResetColor();
+            }
+            else
+            {   
+                Console.ForegroundColor = color;
+                Console.Write(" ");
+                Console.Write(icon);
+                Console.ResetColor();
+                Console.Write($" {name}");
+            }
+        }
     }
 }

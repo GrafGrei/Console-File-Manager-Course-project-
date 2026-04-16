@@ -12,6 +12,8 @@ public static class InputHandler
         {
             ConsoleKey.UpArrow => ActionType.Up,
             ConsoleKey.DownArrow => ActionType.Down,
+            ConsoleKey.J => ActionType.Up,
+            ConsoleKey.K => ActionType.Down,
             ConsoleKey.Enter => ActionType.Enter,
             ConsoleKey.Backspace => ActionType.Back,
             ConsoleKey.Q => ActionType.Quit,
