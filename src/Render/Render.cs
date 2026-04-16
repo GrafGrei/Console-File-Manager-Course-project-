@@ -1,50 +1,45 @@
 namespace ConsoleFileManager.Render;
 
 using ConsoleFileManager.Core;
-using Spectre.Console;
 
 public static class Render
 {    
     public static void Draw(AppState state)
     {
-        AnsiConsole.Clear();
+        Console.Clear();
         
         Console.SetCursorPosition(0, 0);
 
-        AnsiConsole.Write(
-            new Rows(
-                new Panel(
-                    "File Manager"
-                    )
-                    .NoBorder()
-                    .Padding(0, 0)
-                    .Expand(),
-                new Panel(
-                    $"""Current Path: {state.CurrentPath}"""
-                    )
-                    .NoBorder()
-                    .Padding(1, 1)
-                    .Expand(),
-                new Columns(
-                    new Panel("LEFT")
-                        .Header("L")
-                        .Border(BoxBorder.Rounded),
+        int width = Console.WindowWidth;
+        int height = Console.WindowHeight;
 
-                    new Panel("MIDDLE")
-                        .Header("M")
-                        .Border(BoxBorder.Rounded),
+        int treeBlockWidth = width / 6;
+        int directoryBlockWidth = (width - treeBlockWidth)/2;
+        int previewBlockWidth = width - treeBlockWidth - directoryBlockWidth;
+        
+        string AppName = "Console File Manager";
 
-                    new Panel("RIGHT")
-                        .Header("R")
-                        .Border(BoxBorder.Rounded)
-                ),
-                new Panel("BOTTOM")
-                    .Header("B")
-                    .Border(BoxBorder.Rounded)
-            )
-        );
+        Console.SetCursorPosition((width - AppName.Length) / 2, 0);
 
+        Console.Write(AppName);
 
+        Elemens.DrawHorizontal(0, 1, width);
+        
+        Console.SetCursorPosition(1, 2);
+        Console.WriteLine($"Path: {state.CurrentPath}".PadRight(width));
+
+        Elemens.DrawHorizontal(0, 3, width);
+
+        Elemens.DrawUpCorner(treeBlockWidth, 3);
+        Elemens.DrawUpCorner(treeBlockWidth + directoryBlockWidth, 3);
+
+        Elemens.DrawVertical(treeBlockWidth, 4, height - 6);
+        Elemens.DrawVertical(treeBlockWidth + directoryBlockWidth, 4, height - 6);
+
+        Elemens.DrawHorizontal(0, height - 2, width);
+
+        Elemens.DrawDownCorner(treeBlockWidth, height - 2);
+        Elemens.DrawDownCorner(treeBlockWidth + directoryBlockWidth, height - 2);
 
     }
 }
