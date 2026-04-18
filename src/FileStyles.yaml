@@ -1,0 +1,137 @@
+default:
+  icon: ""
+  fg: Gray
+
+directories:
+  icon: ""
+  fg: Cyan
+
+# CODE
+code:
+  icon: ""
+  fg: Cyan
+  extensions: [cs]
+
+javascript:
+  icon: ""
+  fg: Yellow
+  extensions: [js]
+
+typescript:
+  icon: ""
+  fg: Blue
+  extensions: [ts]
+
+cpp:
+  icon: ""
+  fg: Blue
+  extensions: [cpp, c, h]
+
+java:
+  icon: ""
+  fg: Red
+  extensions: [java]
+
+python:
+  icon: ""
+  fg: Yellow
+  extensions: [py]
+
+go:
+  icon: ""
+  fg: Cyan
+  extensions: [go]
+
+rust:
+  icon: ""
+  fg: DarkYellow
+  extensions: [rs]
+
+# WEB
+html:
+  icon: ""
+  fg: Red
+  extensions: [html]
+
+css:
+  icon: ""
+  fg: Blue
+  extensions: [css]
+
+scss:
+  icon: ""
+  fg: Magenta
+  extensions: [scss]
+
+json:
+  icon: ""
+  fg: Yellow
+  extensions: [json]
+
+xml:
+  icon: ""
+  fg: DarkYellow
+  extensions: [xml]
+
+yaml:
+  icon: ""
+  fg: Gray
+  extensions: [yml, yaml]
+
+# CONFIG
+config:
+  icon: ""
+  fg: Gray
+  extensions: [conf, ini]
+
+# DOCS
+markdown:
+  icon: ""
+  fg: White
+  extensions: [md]
+
+text:
+  icon: ""
+  fg: Gray
+  extensions: [txt]
+
+pdf:
+  icon: ""
+  fg: Red
+  extensions: [pdf]
+
+# IMAGES
+images:
+  icon: ""
+  fg: Magenta
+  extensions: [png, jpg, jpeg, gif, webp]
+
+# VIDEO
+video:
+  icon: ""
+  fg: DarkMagenta
+  extensions: [mp4, mkv, avi]
+
+# AUDIO
+audio:
+  icon: ""
+  fg: Green
+  extensions: [mp3, wav, flac]
+
+# ARCHIVES
+archives:
+  icon: ""
+  fg: DarkYellow
+  extensions: [zip, tar, gz, rar, 7z]
+
+# EXEC
+executables:
+  icon: ""
+  fg: Green
+  extensions: [exe, bin, sh]
+
+# DB
+database:
+  icon: ""
+  fg: DarkCyan
+  extensions: [db, sqlite]
