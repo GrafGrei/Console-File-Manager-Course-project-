@@ -15,14 +15,14 @@ public static class DirectoryManager
             var files = Directory.GetFiles(state.CurrentPath)
                 .OrderBy(x => x);
 
-            state.Files = dirs
+            state.CurentDirList = dirs
                 .Concat(files)
                 .ToList();
         }
         catch (Exception ex)
         {
             Console.WriteLine($"Error loading directory: {ex.Message}");
-            state.Files = new List<string>();
+            state.CurentDirList = new List<string>();
         }
     }
 }

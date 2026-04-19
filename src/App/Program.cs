@@ -9,7 +9,7 @@ class Program
     static bool running = true;
 
     static AppState state = new AppState();
-    static ScreenBuffer screen = new ScreenBuffer();
+    static ScreenBuffer screen = new ScreenBuffer(state);
     static EventHendler eventHandler = new EventHendler();
     static UI ui = new UI(screen, state);
 
@@ -26,6 +26,8 @@ class Program
             HandleEvent(eventHandler.Read());
 
             screen.UpdateSize();
+
+            DirectoryManager.LoadCurentDir(state);
 
             ui.Draw();
 
@@ -48,7 +50,7 @@ class Program
                 break;
 
             case EventType.Down:
-                if (state.SelectedIndex < state.Files.Count - 1)
+                if (state.SelectedIndex < state.CurentDirList.Count - 1)
                     state.SelectedIndex++;
 
                 if (state.SelectedIndex >= state.ScrollOffset + state.VisibleHeight)
@@ -56,9 +58,9 @@ class Program
                 break;
 
             case EventType.Right:
-                if (Directory.Exists(state.Files[state.SelectedIndex]))
+                if (Directory.Exists(state.CurentDirList[state.SelectedIndex]))
                 {
-                    state.CurrentPath = state.Files[state.SelectedIndex];
+                    state.CurrentPath = state.CurentDirList[state.SelectedIndex];
                     state.SelectedIndex = 0;
                     state.ScrollOffset = 0;
                 }

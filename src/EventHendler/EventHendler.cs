@@ -17,6 +17,7 @@ public class EventHendler
 
     public EventType Read()
     {
+
         if (!Console.KeyAvailable)
             return EventType.None;
 

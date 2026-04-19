@@ -1,16 +1,20 @@
 namespace ConsoleFileManager.Render;
 
+using ConsoleFileManager.Core;
+
 
 public class ScreenBuffer
 {
     private int W;
     private int H;
+    private AppState _state;
 
     Cell[,] curr = null!;
     Cell[,] prev = null!;
 
-    public ScreenBuffer()
-    {
+    public ScreenBuffer(AppState state)
+    {   
+        _state = state;
         UpdateSize(force: true);
     }
 
@@ -27,6 +31,10 @@ public class ScreenBuffer
 
         curr = new Cell[H, W];
         prev = new Cell[H, W];
+
+        _state.VisibleHeight = H - 6;
+
+        Console.Clear();
 
         Clear(curr);
         Clear(prev);

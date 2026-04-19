@@ -1,4 +1,4 @@
-namespace Core;
+namespace ConsoleFileManager.Core;
 
 using System;
 using System.Collections.Generic;
@@ -10,7 +10,7 @@ using YamlDotNet.Serialization.NamingConventions;
 
 public class FileStyle
 {
-    public string Icon { get; set; } = "";
+    public Char Icon { get; set; } = '';
 
     public string? Fg { get; set; }
     public string? Bg { get; set; }
