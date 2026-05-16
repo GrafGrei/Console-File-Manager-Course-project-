@@ -2,6 +2,7 @@ namespace ConsoleFileManager.EventHendler;
 
 public enum EventType
 {
+    Dot,
     None,
     Up,
     Down,
@@ -12,9 +13,6 @@ public enum EventType
 
 public class EventHendler
 {
-    private int lastW;
-    private int lastH;
-
     public EventType Read()
     {
 
@@ -25,6 +23,7 @@ public class EventHendler
 
         return key.Key switch
         {
+            ConsoleKey.OemPeriod => EventType.Dot,
             ConsoleKey.UpArrow => EventType.Up,
             ConsoleKey.DownArrow => EventType.Down,
             ConsoleKey.LeftArrow => EventType.Left,

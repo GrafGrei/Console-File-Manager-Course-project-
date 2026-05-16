@@ -28,6 +28,8 @@ class Program
             screen.UpdateSize();
 
             DirectoryManager.LoadCurentDir(state);
+            // DirectoryManager.LoadSelectDir(state);
+            // DirectoryManager.LoadParentDir(state);
 
             ui.Draw();
 
@@ -40,6 +42,10 @@ class Program
     {
         switch (e)
         {
+            case EventType.Dot:
+                state.visibleHiden = !state.visibleHiden;
+                break;
+
             case EventType.Up:
                 if (state.SelectedIndex > 0)
                     state.SelectedIndex--;

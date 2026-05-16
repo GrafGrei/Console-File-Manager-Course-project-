@@ -1,5 +1,6 @@
 namespace ConsoleFileManager.Render;
 
+using System.Security.Cryptography.X509Certificates;
 using ConsoleFileManager.Core;
 
 
@@ -128,6 +129,17 @@ public class ScreenBuffer
         for (int y = 0; y < H; y++)
         for (int x = 0; x < W; x++)
             prev[y, x] = curr[y, x];
+    }
+
+    public void ClearZone(int x, int y, int x2, int y2)
+    {
+        for (int i = x; i < x2; i++)
+        {
+            for (int j = y; j < y2; j++)
+            {
+                Put(i, j, ' ');
+            }
+        }
     }
 }
 
