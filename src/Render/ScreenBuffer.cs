@@ -1,6 +1,5 @@
 namespace ConsoleFileManager.Render;
 
-using System.Security.Cryptography.X509Certificates;
 using ConsoleFileManager.Core;
 
 
@@ -103,7 +102,7 @@ public class ScreenBuffer
                     Console.ForegroundColor = curr[y, x].Fg;
                     if (curr[y, x].Bg.HasValue)
                     {
-                        Console.BackgroundColor = curr[y, x].Bg.Value;
+                        Console.BackgroundColor = curr[y, x].Bg!.Value;
                     }
                     else
                     {

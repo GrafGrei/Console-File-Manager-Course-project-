@@ -1,6 +1,7 @@
 namespace ConsoleFileManager.Render;
 
 using ConsoleFileManager.Core;
+using ConsoleFileManager.Utils;
 
 public class UI
 {
@@ -36,7 +37,7 @@ public class UI
         int padding = (Console.WindowWidth - AppName.Length) / 2;
         screen.Print(padding, 0, AppName, ConsoleColor.Cyan);
         screen.DrawHLine(0, 1, Console.WindowWidth, '─', ConsoleColor.White);
-        screen.Print(1, 2, $"Current Path: {state.CurrentPath}".PadRight(Console.WindowWidth-1), ConsoleColor.White);
+        screen.Print(1, 2, TextUtils.Trim($"Current Path: {state.CurrentPath}", Console.WindowWidth-1).PadRight(Console.WindowWidth-1), ConsoleColor.White);
         screen.DrawHLine(0, 3, Console.WindowWidth, '─', ConsoleColor.White);
     }
 
@@ -83,12 +84,13 @@ public class UI
         int end = Math.Min(start + state.VisibleHeight, state.CurentDirList.Count);
 
         screen.ClearZone(parentBlock+1, 4, parentBlock + dirBlock - 1, Console.WindowHeight-2);
- 
+
         for (int i = start; i < end; i++)
         {   
             cursor++;
             FileStyle style = styleProvider.GetStyle(state.CurentDirList[i]);
-            string name = " " + Path.GetFileName(state.CurentDirList[i]).PadRight(dirBlock - 5);
+            string r_name = " " + Path.GetFileName(state.CurentDirList[i]);
+            string name = TextUtils.Trim(r_name, dirBlock-4).PadRight(dirBlock - 4);
             if (i == state.SelectedIndex)
             {   
                 screen.Put(parentBlock + 1, cursor - 1, '', ConsoleColor.DarkBlue);
