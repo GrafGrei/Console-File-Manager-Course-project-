@@ -33,12 +33,8 @@ public class UI
 
     private void DrawHeader()
     {   
-        string AppName = "Console File Manager";
-        int padding = (Console.WindowWidth - AppName.Length) / 2;
-        screen.Print(padding, 0, AppName, ConsoleColor.Cyan);
+        screen.Print(1, 0, TextUtils.Trim($"Current Path: {state.CurrentPath}", Console.WindowWidth-1).PadRight(Console.WindowWidth-1), ConsoleColor.White);
         screen.DrawHLine(0, 1, Console.WindowWidth, '─', ConsoleColor.White);
-        screen.Print(1, 2, TextUtils.Trim($"Current Path: {state.CurrentPath}", Console.WindowWidth-1).PadRight(Console.WindowWidth-1), ConsoleColor.White);
-        screen.DrawHLine(0, 3, Console.WindowWidth, '─', ConsoleColor.White);
     }
 
     private void DrawFooter()
@@ -52,38 +48,29 @@ public class UI
         dirBlock = Console.WindowWidth / 2;
         prviewBlock = Console.WindowWidth - parentBlock - dirBlock;
 
-        screen.Put(parentBlock, 3, '┬', ConsoleColor.White);
-        screen.Put(parentBlock + dirBlock, 3, '┬', ConsoleColor.White);
+        screen.Put(parentBlock, 1, '┬', ConsoleColor.White);
+        screen.Put(parentBlock + dirBlock, 1, '┬', ConsoleColor.White);
         screen.Put(parentBlock, Console.WindowHeight - 2, '┴', ConsoleColor.White);
         screen.Put(parentBlock + dirBlock, Console.WindowHeight - 2, '┴', ConsoleColor.White);
 
-        screen.DrawVLine(parentBlock, 4, Console.WindowHeight - 6, '│', ConsoleColor.White);
-        screen.DrawVLine(parentBlock + dirBlock, 4, Console.WindowHeight - 6, '│', ConsoleColor.White);
+        screen.DrawVLine(parentBlock, 2, Console.WindowHeight - 4, '│', ConsoleColor.White);
+        screen.DrawVLine(parentBlock + dirBlock, 2, Console.WindowHeight - 4, '│', ConsoleColor.White);
     
     }
 
     private void DrawParentDirList()
     {
-        // int cursor = 4;
-
-        // foreach (var path in state.ParentDirList)
-        // {   
-        //     cursor++;
-        //     FileStyle style = styleProvider.GetStyle(path);
-        //     string name = " " + Path.GetFileName(path).PadRight(parentBlock - 5);
-        //     screen.Put(1, cursor - 1, style.Icon, style.FgColor);
-        //     screen.Print(2, cursor - 1, name, ConsoleColor.White);
-        // }
+        screen.Print(1, 2, "Work in progress");
     }
 
     private void DrawDirList()
     {
-        int cursor = 4;
+        int cursor = 2;
 
         int start = state.ScrollOffset;
         int end = Math.Min(start + state.VisibleHeight, state.CurentDirList.Count);
 
-        screen.ClearZone(parentBlock+1, 4, parentBlock + dirBlock - 1, Console.WindowHeight-2);
+        screen.ClearZone(parentBlock+1, 2, parentBlock + dirBlock, Console.WindowHeight-2);
 
         for (int i = start; i < end; i++)
         {   
@@ -91,6 +78,11 @@ public class UI
             FileStyle style = styleProvider.GetStyle(state.CurentDirList[i]);
             string r_name = " " + Path.GetFileName(state.CurentDirList[i]);
             string name = TextUtils.Trim(r_name, dirBlock-4).PadRight(dirBlock - 4);
+            if (state.SelectedFiles.Contains(state.CurentDirList[i]))
+            {
+                screen.Put(parentBlock, cursor - 1, ' ', ConsoleColor.White, ConsoleColor.Yellow);
+            }
+
             if (i == state.SelectedIndex)
             {   
                 screen.Put(parentBlock + 1, cursor - 1, '', ConsoleColor.DarkBlue);
@@ -111,34 +103,7 @@ public class UI
 
     private void DrawPreview()
     {
-        // if (state.CurentDirList.Count == 0)
-        //     return;
-
-        // string path = state.CurentDirList[state.SelectedIndex];
-
-        // if (!Directory.Exists(path))
-        // {
-        //     screen.Print(parentBlock + dirBlock + 2, 4, "Directory preview not implemented yet", ConsoleColor.Gray);
-        // }
-        // else
-        // {
-        //     try
-        //     {
-        //         var lines = File.ReadAllLines(path);
-        //         int maxLines = Console.WindowHeight - 6;
-        //         int maxWidth = prviewBlock - 4;
-
-        //         for (int i = 0; i < Math.Min(lines.Length, maxLines); i++)
-        //         {
-        //             string line = lines[i].Length > maxWidth ? lines[i].Substring(0, maxWidth - 3) + "..." : lines[i];
-        //             screen.Print(parentBlock + dirBlock + 2, 4 + i, line, ConsoleColor.Gray);
-        //         }
-        //     }
-        //     catch (Exception ex)
-        //     {
-        //         screen.Print(parentBlock + dirBlock + 2, 4, $"Error loading preview: {ex.Message}", ConsoleColor.Red);
-        //     }
-        // }
+        screen.Print(parentBlock + dirBlock + 2, 2, "Work in progress");
         }
 
 

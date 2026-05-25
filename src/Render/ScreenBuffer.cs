@@ -32,7 +32,7 @@ public class ScreenBuffer
         curr = new Cell[H, W];
         prev = new Cell[H, W];
 
-        _state.VisibleHeight = H - 6;
+        _state.VisibleHeight = H - 4;
 
         Console.Clear();
 

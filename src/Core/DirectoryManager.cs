@@ -95,4 +95,40 @@ public static class DirectoryManager
 
         return (File.GetAttributes(path) & FileAttributes.Hidden) != 0; 
     }
+
+    public static void CopyFile(string targetDir, string file, bool overwrite)
+    {
+        string dest = Path.Combine(
+            targetDir,
+            Path.GetFileName(file)
+        );
+
+        File.Copy(file, dest, overwrite: overwrite);
+    }
+
+    public static void MoveFile(string targetDir, string file, bool overwrite)
+    {
+        string dest = Path.Combine(
+            targetDir,
+            Path.GetFileName(file)
+        );
+
+        File.Move(file, dest, overwrite: overwrite);
+    }
+
+    public static void CopyFiles(string targetDir, List<string> filesList, bool overwrite)
+    {
+        foreach (string file in filesList)
+        {
+            DirectoryManager.CopyFile(targetDir, file, overwrite);
+        }
+    }
+
+    public static void MoveFiles(string targetDir, List<string> filesList, bool overwrite)
+    {
+        foreach (string file in filesList)
+        {
+            DirectoryManager.MoveFile(targetDir, file, overwrite);
+        }
+    }
 }

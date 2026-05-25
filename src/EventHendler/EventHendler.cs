@@ -2,7 +2,12 @@ namespace ConsoleFileManager.EventHendler;
 
 public enum EventType
 {
-    Dot,
+    THiden,
+    Select,
+    Yank,
+    UnYank,
+    CutYank,
+    Paste,
     None,
     Up,
     Down,
@@ -23,7 +28,11 @@ public class EventHendler
 
         return key.Key switch
         {
-            ConsoleKey.OemPeriod => EventType.Dot,
+            ConsoleKey.Spacebar => EventType.Select,
+            ConsoleKey.Y => EventType.Yank,
+            ConsoleKey.X => EventType.CutYank,
+            ConsoleKey.P => EventType.Paste,
+            ConsoleKey.OemPeriod => EventType.THiden,
             ConsoleKey.UpArrow => EventType.Up,
             ConsoleKey.DownArrow => EventType.Down,
             ConsoleKey.LeftArrow => EventType.Left,

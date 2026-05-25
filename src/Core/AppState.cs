@@ -11,4 +11,7 @@ public class AppState
     public int ScrollOffset {get; set; } = 0;
     public int VisibleHeight { get; set; } = 0;
     public bool visibleHiden{ get; set; } = false;
+    public List<string> SelectedFiles{ get; set; } = new();
+    public List<string> YankedList{ get; set; } = new(); 
+    public bool CutYank{ get; set; } = false;
 }
