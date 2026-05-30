@@ -22,14 +22,16 @@ class Program
 
 
         while (running)
-        {
-            HandleEvent(eventHandler.Read());
+        {   
+            if(!state.IsInputMode)
+                HandleEvent(eventHandler.Read());
+            else
+                InputHendler.HendleInput(state, screen, ui);
 
             screen.UpdateSize();
 
             DirectoryManager.LoadCurentDir(state);
-            // DirectoryManager.LoadSelectDir(state);
-            // DirectoryManager.LoadParentDir(state);
+            DirectoryManager.LoadParentDir(state);
 
             ui.Draw();
 
@@ -42,6 +44,10 @@ class Program
     {
         switch (e)
         {
+            case EventType.Rename:
+                state.IsInputMode = true;
+                break;
+
             case EventType.Select:
                 string file = state.CurentDirList[state.SelectedIndex];
                 if (!state.SelectedFiles.Contains(file))
@@ -148,7 +154,8 @@ class Program
 
 
 
-//┬
-//│
-//─
-//┴
+// ╯ ╮ ╭ ╰ │ ─ ┴ ┬
+//╭─┬╮
+//│ ││ 
+//╰─┴╯
+

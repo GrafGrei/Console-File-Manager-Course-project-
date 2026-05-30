@@ -9,9 +9,15 @@ public class AppState
     public int ParentSelectedIndex { get; set; } = 0;
     public int SelectedIndex { get; set; } = 0;
     public int ScrollOffset {get; set; } = 0;
+    public int dScrollOffset {get; set; } = 0;
     public int VisibleHeight { get; set; } = 0;
     public bool visibleHiden{ get; set; } = false;
     public List<string> SelectedFiles{ get; set; } = new();
     public List<string> YankedList{ get; set; } = new(); 
     public bool CutYank{ get; set; } = false;
+    public bool RenameFeld{ get; set; } = false;
+    public string RenameFeldData{ get; set; } = "";
+    public bool IsInputMode{ get; set; } = false;
+    public string InputText{ get; set; } = "";
+    
 }

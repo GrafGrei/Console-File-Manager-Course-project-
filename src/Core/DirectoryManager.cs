@@ -86,6 +86,11 @@ public static class DirectoryManager
         }
     }
 
+    public static bool IsDirectory(string path)
+    {
+        return Directory.Exists(path);
+    }
+
     public static bool IsHidden(string path)
     {
         string name = Path.GetFileName(path);

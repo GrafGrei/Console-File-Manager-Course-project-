@@ -3,6 +3,7 @@ namespace ConsoleFileManager.EventHendler;
 public enum EventType
 {
     THiden,
+    Rename,
     Select,
     Yank,
     UnYank,
@@ -30,6 +31,7 @@ public class EventHendler
         {
             ConsoleKey.Spacebar => EventType.Select,
             ConsoleKey.Y => EventType.Yank,
+            ConsoleKey.R => EventType.Rename,
             ConsoleKey.X => EventType.CutYank,
             ConsoleKey.P => EventType.Paste,
             ConsoleKey.OemPeriod => EventType.THiden,
