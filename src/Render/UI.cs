@@ -40,7 +40,7 @@ public class UI
 
 
         int count = state.CurentDirList.Count;
-        int sel = state.SelectedIndex;
+        int sel = state.SelectedIndex+1;
 
         string text = $"  {sel}/{count}  ".PadRight(11); 
 
